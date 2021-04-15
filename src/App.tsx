@@ -4,7 +4,7 @@ import Capa from "./components/Capa";
 import CardBrand from "./components/CardBrand";
 import CardFour from "./components/CardFour";
 import CardOne from "./components/CardOne";
-import CardTree from "./components/CardThree";
+import CardThree from "./components/CardThree";
 import CardTwo from "./components/CardTwo";
 import Contracapa from "./components/ContraCapa";
 import Description from "./components/Description";
@@ -65,65 +65,37 @@ function App() {
             composicao="100% poliéster"
           />
           <Description
-            title="Calça"
+            title="Calça Blue Marina"
             estilo="description-bottom"
             reference="1056"
             tamanho="P/G"
-            valor="299,90"
+            valor="249,90"
             descricao="
-          Parka de tela crochet, couro, renda chantily e sianinha. Punhos de
-          elástico."
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam tenetur autem sint facere mollitia ipsum voluptatibus id totam voluptas porro eveniet accusantium tempora, assumenda explicabo perferendis blanditiis debitis? Pariatur, cum."
             composicao="100% poliéster"
           />
         </div>
       </CardTwo>
 
-      <CardTree>
-        <article className="card-produto-three">
-          <div>
-            <img
-              className="item-1"
-              src="https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-05.jpg?raw=true"
-              alt=""
-            />
-            <img
-              className="item-2"
-              src="https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-06.jpg?raw=true"
-              alt=""
-            />
-          </div>
-          <img
-            className="item-3"
-            src="https://github.com/alopsantos/ES-Catalog/blob/master/images/produto-02.jpg?raw=true"
-            alt=""
-          />
-        </article>
-      </CardTree>
+      <CardThree
+        image0="https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-05.jpg?raw=true"
+        description0="Produto 01"
+        image1="https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-06.jpg?raw=true"
+        description1="Produto 02"
+        image2="https://github.com/alopsantos/ES-Catalog/blob/master/images/produto-02.jpg?raw=true"
+        description2="Produto 03"
+      />
 
-      <CardFour>
-        <article className="card-produto-four">
-          <img
-            className="item-1"
-            src="https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-01.jpg?raw=true"
-            alt=""
-          />
-          <img
-            className="item-2"
-            src="https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-02.jpg?raw=true"
-            alt=""
-          />
-          <img
-            className="item-3"
-            src="https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-03.jpg?raw=true"
-            alt=""
-          />
-          <img
-            className="item-4"
-            src="https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-04.jpg?raw=true"
-            alt=""
-          />
-        </article>
-      </CardFour>
+      <CardFour
+        image0="https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-01.jpg?raw=true"
+        description0="Produto 01"
+        image1="https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-02.jpg?raw=true"
+        description1="Produto 02"
+        image2="https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-03.jpg?raw=true"
+        description2="Produto 03"
+        image3="https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-04.jpg?raw=true"
+        description3="Produto 04"
+      />
 
       <CardBrand>
         <img
