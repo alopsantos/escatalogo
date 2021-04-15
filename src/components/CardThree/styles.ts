@@ -28,8 +28,13 @@ export const Cardthreecss = styled.section`
     width: 51%;
   }
 
-  @media print{
-    height: 1002px;
-    width: 51%;
+  @media print {
+    div{
+      margin-left: 40px;
+    }
+    .item-3 {
+      height: 1002px;
+      width: 51%;
+    }
   }
 `;

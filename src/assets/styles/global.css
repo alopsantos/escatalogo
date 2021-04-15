@@ -1,33 +1,5 @@
-*{margin:0; padding: 0;}
-h1,
-span,
-b,
-strong,
-p {
-  font-family: "Poppins", sans-serif;
-}
-
-h1 {
-  color: orange;
-  font-size: 25px;
-  font-family: "Poppins", sans-serif;
-}
-
-span {
-  font-weight: 400;
-}
-b {
-  display: block;
-  font-weight: bold;
-  margin: 10px 0;
-}
-strong {
-  color: orange;
-
-  font-size: 20px;
-  display: block;
-  margin-top: 10px;
-}
-p {
-  font-weight: 400;
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
 }
