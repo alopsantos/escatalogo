@@ -2,9 +2,14 @@ import React from 'react';
 
 import { Contracapacss } from './styles';
 
-const ContraCapa: React.FC = ({children}) => {
+interface IContracapa{
+  image: string;
+  description: string;
+}
+const ContraCapa: React.FC<IContracapa> = ({image, description, children}) => {
   return(
     <Contracapacss className="sheet">
+      <img src={image} alt={"Imagem "+description}/>
       {children}
     </Contracapacss>
   )

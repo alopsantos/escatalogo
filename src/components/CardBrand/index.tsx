@@ -10,4 +10,4 @@ const CardBrand: React.FC = ({ children }) => {
   );
 };
 
-export default CardBrand;
+export default CardBrand

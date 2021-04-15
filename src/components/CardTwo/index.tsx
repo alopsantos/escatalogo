@@ -1,14 +1,26 @@
-import React from 'react';
+import React from "react";
 
+import { Cardtwocss } from "./styles";
 
-import { Cardtwocss } from './styles';
+interface ICardtwo {
+  image: string;
+  title: string;
+}
 
-const CardTwo: React.FC = ({children}) => {
+const CardTwo: React.FC<ICardtwo> = ({
+  image,
+  title,
+  children,
+}) => {
   return (
     <Cardtwocss className="sheet">
-      {children}
+      <article>
+        <img src={image} alt={"Imagem " + title} />
+
+        {children}
+      </article>
     </Cardtwocss>
-  )
-}
+  );
+};
 
 export default CardTwo;
