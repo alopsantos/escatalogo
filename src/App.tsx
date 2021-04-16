@@ -95,6 +95,24 @@ function App() {
         description2="Produto 03"
         image3="https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-04.jpg?raw=true"
         description3="Produto 04"
+        imagens={[
+          {
+            foto:
+              "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-01.jpg?raw=true",
+          },
+          {
+            foto:
+              "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-02.jpg?raw=true",
+          },
+          {
+            foto:
+              "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-03.jpg?raw=true",
+          },
+          {
+            foto:
+              "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-03.jpg?raw=true",
+          },
+        ]}
       />
 
       <CardBrand>
