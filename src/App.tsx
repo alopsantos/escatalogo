@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import Capa from "./components/Capa";
 import CardBrand from "./components/CardBrand";
@@ -8,27 +8,52 @@ import CardThree from "./components/CardThree";
 import CardTwo from "./components/CardTwo";
 import Contracapa from "./components/ContraCapa";
 import Description from "./components/Description";
+import api from "./services/api";
+
+interface ICatalogo {
+  id: number;
+  nome: string;
+  descricao: string;
+  capa: string;
+  contracapa: string;
+  itens: string[];
+}
+interface IItem{
+  posicao: string;
+  layout: "CardOne" | "CardTwo" | "CardThree" | "CardFour";
+}
 
 function App() {
+  const [catalogo, setCatalogo] = useState<ICatalogo[]>([]);
+  const [itens, setItens] = useState<IItem[]>([]);
+
+  useEffect(() => {
+    loadApi();
+  }, []);
+  async function loadApi() {
+    const response = await api.get("catalogo");
+    setCatalogo(response.data);
+  }
   return (
     <>
-      <Capa
-        description="Nome da coleção"
-        image="https://github.com/alopsantos/ES-Catalog/blob/master/images/capa.jpg?raw=true"
-      />
+      {catalogo.map((catalogopdf) => {
+        return (
+          <>
+            <Capa description={catalogopdf.nome} image={catalogopdf.capa} />
 
-      <Contracapa
-        image="https://github.com/alopsantos/ES-Catalog/blob/master/images/contra-capa.jpg?raw=true"
-        description="Nome da coleção"
-      >
-        <p>
-          <strong>My Way</strong>A arte de encontrar novos caminhos e se
-          encontrar, nos faz apreciar a nós mesmos nesta jornada. Trazer essa
-          es- tética junto ao conforto e sosticação faz parte da essência da
-          Aline Mezzari Brand. Trazemos a coleção "My Way" com novos ares, novas
-          possibilidades e novos caminhos.
-        </p>
-      </Contracapa>
+            <Contracapa
+              description={catalogopdf.nome}
+              image={catalogopdf.contracapa}
+            >
+              <p>
+                <strong>{catalogopdf.nome}</strong>
+                {catalogopdf.descricao}
+              </p>
+            </Contracapa>
+
+          </>
+        );
+      })}
 
       <CardOne
         image="https://github.com/alopsantos/ES-Catalog/blob/master/images/produto-01.jpg?raw=true"
@@ -79,10 +104,10 @@ function App() {
 
       <CardThree
         descricao="Blazer Pink Vera"
-        imagens = {[
+        imagens={[
           "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-05.jpg?raw=true",
           "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-06.jpg?raw=true",
-          "https://github.com/alopsantos/ES-Catalog/blob/master/images/produto-02.jpg?raw=true"
+          "https://github.com/alopsantos/ES-Catalog/blob/master/images/produto-02.jpg?raw=true",
         ]}
       />
 
