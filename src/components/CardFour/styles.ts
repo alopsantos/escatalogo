@@ -13,10 +13,10 @@ export const Cardfourcss = styled.section`
         width: 100%;
     }
 
-    .item-2{
+    .item-1{
         margin-top: 80px;
     }
-    .item-3{
+    .item-2{
         margin-top: -80px;
     }
 `;

@@ -78,40 +78,21 @@ function App() {
       </CardTwo>
 
       <CardThree
-        image0="https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-05.jpg?raw=true"
-        description0="Produto 01"
-        image1="https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-06.jpg?raw=true"
-        description1="Produto 02"
-        image2="https://github.com/alopsantos/ES-Catalog/blob/master/images/produto-02.jpg?raw=true"
-        description2="Produto 03"
+        descricao="Blazer Pink Vera"
+        imagens = {[
+          "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-05.jpg?raw=true",
+          "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-06.jpg?raw=true",
+          "https://github.com/alopsantos/ES-Catalog/blob/master/images/produto-02.jpg?raw=true"
+        ]}
       />
 
       <CardFour
-        image0="https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-01.jpg?raw=true"
-        description0="Produto 01"
-        image1="https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-02.jpg?raw=true"
-        description1="Produto 02"
-        image2="https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-03.jpg?raw=true"
-        description2="Produto 03"
-        image3="https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-04.jpg?raw=true"
-        description3="Produto 04"
+        descricao="Blusa Floral Babados Maria"
         imagens={[
-          {
-            foto:
-              "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-01.jpg?raw=true",
-          },
-          {
-            foto:
-              "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-02.jpg?raw=true",
-          },
-          {
-            foto:
-              "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-03.jpg?raw=true",
-          },
-          {
-            foto:
-              "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-03.jpg?raw=true",
-          },
+          "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-01.jpg?raw=true",
+          "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-02.jpg?raw=true",
+          "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-03.jpg?raw=true",
+          "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-03.jpg?raw=true",
         ]}
       />
 
