@@ -44,5 +44,6 @@ export const Cardonecss = styled.section`
     justify-content: center;
     margin-left: 30px;
     margin-right: 10px;
+    width: 358px;
   }
 `;
