@@ -18,21 +18,53 @@ interface ICatalogo {
   contracapa: string;
   itens: string[];
 }
-interface IItem{
+interface IItem {
+  id: number;
+  catalogoId: number;
+  produtoId: number;
   posicao: string;
   layout: "CardOne" | "CardTwo" | "CardThree" | "CardFour";
+}
+interface IProduto {
+  id: number;
+  nome: string;
+  referencia: string;
+  valor: string;
+  descricao: string;
+  composicao: string;
+  tamanhos: string;
+  imagem01: string;
+  imagem02: string;
+  imagem03: string;
+  imagem04: string;
+  imagem05: string;
 }
 
 function App() {
   const [catalogo, setCatalogo] = useState<ICatalogo[]>([]);
   const [itens, setItens] = useState<IItem[]>([]);
+  const [produto, setProduto] = useState<IProduto>();
 
   useEffect(() => {
-    loadApi();
+    loadCatalogo();
+    loadItenscatalogo();
   }, []);
-  async function loadApi() {
+  async function loadCatalogo() {
     const response = await api.get("catalogo");
     setCatalogo(response.data);
+  }
+  async function loadItenscatalogo() {
+    // const response = await api.get(`itensCatalogo/${catalogo.id}`);
+    const response = await api.get("itensCatalogo");
+    // let novoArrayB = objetos.filter(objeto => objeto.nome === 'Gandalf');
+    // const alimentos = produtos.filter(isAlimento);
+
+    setItens(response.data)
+  }
+  async function loadProduto(id: number) {
+    const response = await api.get(`produtos/${id}`);
+
+    setProduto(response.data);
   }
   return (
     <>
@@ -50,7 +82,31 @@ function App() {
                 {catalogopdf.descricao}
               </p>
             </Contracapa>
+            {
+              itens.map(item => {
 
+
+                switch (item.layout) {
+                  case "CardOne":
+                    console.log(item.produtoId)
+                    break
+                  case "CardTwo":
+                    console.log(item.produtoId)
+                    break
+                  case "CardThree":
+                    console.log(item.produtoId)
+                    break
+                  case "CardFour":
+                    console.log(item.produtoId)
+                    break
+
+                  default:
+                    console.log("Padrao");
+                }
+
+
+              })
+            }
           </>
         );
       })}
