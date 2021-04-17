@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 
 import Capa from "./components/Capa";
 import CardBrand from "./components/CardBrand";
@@ -24,9 +24,6 @@ interface IItem {
   produtoId: number;
   posicao: string;
   layout: "CardOne" | "CardTwo" | "CardThree" | "CardFour";
-}
-interface IProduto {
-  id: number;
   nome: string;
   referencia: string;
   valor: string;
@@ -43,7 +40,6 @@ interface IProduto {
 function App() {
   const [catalogo, setCatalogo] = useState<ICatalogo[]>([]);
   const [itens, setItens] = useState<IItem[]>([]);
-  const [produto, setProduto] = useState<IProduto>();
 
   useEffect(() => {
     loadCatalogo();
@@ -55,22 +51,18 @@ function App() {
   }
   async function loadItenscatalogo() {
     // const response = await api.get(`itensCatalogo/${catalogo.id}`);
-    const response = await api.get("itensCatalogo");
+    const response = await api.get("itens");
     // let novoArrayB = objetos.filter(objeto => objeto.nome === 'Gandalf');
     // const alimentos = produtos.filter(isAlimento);
 
-    setItens(response.data)
+    setItens(response.data);
   }
-  async function loadProduto(id: number) {
-    const response = await api.get(`produtos/${id}`);
 
-    setProduto(response.data);
-  }
   return (
     <>
       {catalogo.map((catalogopdf) => {
         return (
-          <>
+          <Fragment key={catalogopdf.id}>
             <Capa description={catalogopdf.nome} image={catalogopdf.capa} />
 
             <Contracapa
@@ -82,100 +74,83 @@ function App() {
                 {catalogopdf.descricao}
               </p>
             </Contracapa>
-            {
-              itens.map(item => {
+            {itens.map((item) => {
+              switch (item.layout) {
+                case "CardOne":
+                  return (
+                    <CardOne
+                      key={item.id}
+                      image={item.imagem01}
+                      title={item.nome}
+                    >
+                      <div className="description-one">
+                        <Description
+                          title={item.nome}
+                          reference={item.referencia}
+                          tamanho={item.tamanhos}
+                          valor={item.valor}
+                          descricao={item.descricao}
+                          composicao={item.composicao}
+                        />
+                      </div>
+                    </CardOne>
+                  );
+                case "CardTwo":
+                  return (
+                    <CardTwo
+                      key={item.id}
+                      image={item.imagem01}
+                      title={item.nome}
+                    >
+                      <div className="description-two">
+                        <Description
+                          title={item.nome}
+                          estilo="description-top"
+                          reference={item.referencia}
+                          tamanho={item.tamanhos}
+                          valor={item.valor}
+                          descricao={item.descricao}
+                          composicao={item.composicao}
+                        />
+                        <Description
+                          title={item.nome}
+                          estilo="description-top"
+                          reference={item.referencia}
+                          tamanho={item.tamanhos}
+                          valor={item.valor}
+                          descricao={item.descricao}
+                          composicao={item.composicao}
+                        />
+                      </div>
+                    </CardTwo>
+                  );
+                case "CardThree":
+                  return (
+                    <CardThree
+                      descricao={item.nome}
+                      imagens={[item.imagem01, item.imagem03, item.imagem04]}
+                    />
+                  );
+                case "CardFour":
+                  return (
+                    <CardFour
+                      descricao="Blusa Floral Babados Maria"
+                      imagens={[
+                        item.imagem02,
+                        item.imagem03,
+                        item.imagem04,
+                        item.imagem05,
+                      ]}
+                    />
+                  );
 
-
-                switch (item.layout) {
-                  case "CardOne":
-                    console.log(item.produtoId)
-                    break
-                  case "CardTwo":
-                    console.log(item.produtoId)
-                    break
-                  case "CardThree":
-                    console.log(item.produtoId)
-                    break
-                  case "CardFour":
-                    console.log(item.produtoId)
-                    break
-
-                  default:
-                    console.log("Padrao");
-                }
-
-
-              })
-            }
-          </>
+                default:
+                  console.log("Padrao");
+              }
+            })}
+          </Fragment>
         );
       })}
-
-      <CardOne
-        image="https://github.com/alopsantos/ES-Catalog/blob/master/images/produto-01.jpg?raw=true"
-        title="Blusa Maria Fernanda Babados Vermelho"
-      >
-        <div className="description-one">
-          <Description
-            title="Blusa Maria Fernanda Babados Vermelho"
-            reference="1058"
-            tamanho="P/M/G"
-            valor="169,90"
-            descricao="
-          Parka de tela crochet, couro, renda chantily e sianinha. Punhos de
-          elástico."
-            composicao="100% poliéster"
-          />
-        </div>
-      </CardOne>
-
-      <CardTwo
-        image="https://github.com/alopsantos/ES-Catalog/blob/master/images/produto-02.jpg?raw=true"
-        title="Parka Dulcie Tela e Renda Preto"
-      >
-        <div className="description-two">
-          <Description
-            title="Parka Maria Fernanda Verde"
-            estilo="description-top"
-            reference="1056"
-            tamanho="P/G"
-            valor="299,90"
-            descricao="
-          Parka de tela crochet, couro, renda chantily e sianinha. Punhos de
-          elástico."
-            composicao="100% poliéster"
-          />
-          <Description
-            title="Calça Blue Marina"
-            estilo="description-bottom"
-            reference="1056"
-            tamanho="P/G"
-            valor="249,90"
-            descricao="
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam tenetur autem sint facere mollitia ipsum voluptatibus id totam voluptas porro eveniet accusantium tempora, assumenda explicabo perferendis blanditiis debitis? Pariatur, cum."
-            composicao="100% poliéster"
-          />
-        </div>
-      </CardTwo>
-
-      <CardThree
-        descricao="Blazer Pink Vera"
-        imagens={[
-          "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-05.jpg?raw=true",
-          "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-06.jpg?raw=true",
-          "https://github.com/alopsantos/ES-Catalog/blob/master/images/produto-02.jpg?raw=true",
-        ]}
-      />
-
-      <CardFour
-        descricao="Blusa Floral Babados Maria"
-        imagens={[
-          "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-01.jpg?raw=true",
-          "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-02.jpg?raw=true",
-          "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-03.jpg?raw=true",
-          "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-03.jpg?raw=true",
-        ]}
-      />
 
       <CardBrand>
         <img
