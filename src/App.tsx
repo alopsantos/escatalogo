@@ -16,40 +16,19 @@ interface ICatalogo {
   descricao: string;
   capa: string;
   contracapa: string;
-  itens: string[];
+  itens: IItens[];
 }
-interface IItem {
+interface IItens {
+  produtoId: string;
+  posicao: number | string;
+  kit: number | string;
+  layout: "CardOne" | "CardTwo" | "CardThree" | "CardFour";
+}
+
+interface IProdutos {
   id: number;
   catalogoId: number;
   produtoId: number;
-  posicao: string;
-  layout: "CardOne" | "CardTwo" | "CardThree" | "CardFour";
-  nome: string;
-  referencia: string;
-  valor: string;
-  descricao: string;
-  composicao: string;
-  tamanhos: string;
-  imagem01: string;
-  imagem02: string;
-  imagem03: string;
-  imagem04: string;
-  imagem05: string;
-  kit: {
-    nome: string;
-    referencia: string;
-    valor: string;
-    descricao: string;
-    composicao: string;
-    tamanhos: string;
-    imagem01: string;
-    imagem02: string;
-    imagem03: string;
-    imagem04: string;
-    imagem05: string;
-  };
-}
-interface IKit {
   nome: string;
   referencia: string;
   valor: string;
@@ -62,33 +41,38 @@ interface IKit {
   imagem04: string;
   imagem05: string;
 }
+
 function App() {
   const [catalogo, setCatalogo] = useState<ICatalogo[]>([]);
-  const [itens, setItens] = useState<IItem[]>([]);
+  const [produtos, setProdutos] = useState<IProdutos[]>([]);
+  //const [itens, setItens] = useState([]);
 
   useEffect(() => {
     loadCatalogo();
-    loadItenscatalogo();
   }, []);
   async function loadCatalogo() {
     const response = await api.get("catalogo");
     setCatalogo(response.data);
   }
-  async function loadItenscatalogo() {
+  async function loadItenscatalogo(produtoId:string) {
     // const response = await api.get(`itensCatalogo/${catalogo.id}`);
-    const response = await api.get("itens");
+    const response = await api.get(`produtos/${produtoId}`);
     // let novoArrayB = objetos.filter(objeto => objeto.nome === 'Gandalf');
     // const alimentos = produtos.filter(isAlimento);
-
-    setItens(response.data);
+    console.log(response.data.nome);
+    //setProdutos(response.data);
   }
 
   return (
     <>
       {catalogo.map((catalogopdf) => {
         return (
-          <Fragment key={catalogopdf.id}>
+          <>
             <Capa description={catalogopdf.nome} image={catalogopdf.capa} />
+
+            {catalogopdf.itens.map((item) => {
+              return (loadItenscatalogo(item.produtoId))
+            })}
 
             <Contracapa
               description={catalogopdf.nome}
@@ -99,86 +83,9 @@ function App() {
                 {catalogopdf.descricao}
               </p>
             </Contracapa>
-            {itens.map((item) => {
-              switch (item.layout) {
-                case "CardOne":
-                  return (
-                    <CardOne
-                      key={item.id}
-                      image={item.imagem01}
-                      title={item.nome}
-                    >
-                      <div className="description-one">
-                        <Description
-                          title={item.nome}
-                          reference={item.referencia}
-                          tamanho={item.tamanhos}
-                          valor={item.valor}
-                          descricao={item.descricao}
-                          composicao={item.composicao}
-                        />
-                      </div>
-                    </CardOne>
-                  );
-                case "CardTwo":
-                  return (
-                    <CardTwo
-                      key={item.id}
-                      image={item.imagem01}
-                      title={item.nome}
-                    >
-                      {console.log(item.kit)}
-                      <div className="description-two">
-                        <Description
-                          title={item.nome}
-                          estilo="description-top"
-                          reference={item.referencia}
-                          tamanho={item.tamanhos}
-                          valor={item.valor}
-                          descricao={item.descricao}
-                          composicao={item.composicao}
-                        />
-
-                        <Description
-                          title={item.nome}
-                          estilo="description-bottom"
-                          reference={item.referencia}
-                          tamanho={item.tamanhos}
-                          valor={item.valor}
-                          descricao={item.descricao}
-                          composicao={item.composicao}
-                        />
-                      </div>
-                    </CardTwo>
-                  );
-                case "CardThree":
-                  return (
-                    <CardThree
-                      descricao={item.nome}
-                      imagens={[item.imagem01, item.imagem03, item.imagem04]}
-                    />
-                  );
-                case "CardFour":
-                  return (
-                    <CardFour
-                      descricao="Blusa Floral Babados Maria"
-                      imagens={[
-                        item.imagem02,
-                        item.imagem03,
-                        item.imagem04,
-                        item.imagem05,
-                      ]}
-                    />
-                  );
-
-                default:
-                  console.log("Padrao");
-              }
-            })}
-          </Fragment>
+          </>
         );
       })}
-
       <CardBrand>
         <img
           src="https://estacaodamodastore.vteximg.com.br/arquivos/LogoAlineMezzariBrand.svg"
