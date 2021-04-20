@@ -35,8 +35,33 @@ interface IItem {
   imagem03: string;
   imagem04: string;
   imagem05: string;
+  kit: {
+    nome: string;
+    referencia: string;
+    valor: string;
+    descricao: string;
+    composicao: string;
+    tamanhos: string;
+    imagem01: string;
+    imagem02: string;
+    imagem03: string;
+    imagem04: string;
+    imagem05: string;
+  };
 }
-
+interface IKit {
+  nome: string;
+  referencia: string;
+  valor: string;
+  descricao: string;
+  composicao: string;
+  tamanhos: string;
+  imagem01: string;
+  imagem02: string;
+  imagem03: string;
+  imagem04: string;
+  imagem05: string;
+}
 function App() {
   const [catalogo, setCatalogo] = useState<ICatalogo[]>([]);
   const [itens, setItens] = useState<IItem[]>([]);
@@ -102,6 +127,7 @@ function App() {
                       image={item.imagem01}
                       title={item.nome}
                     >
+                      {console.log(item.kit)}
                       <div className="description-two">
                         <Description
                           title={item.nome}
@@ -112,9 +138,10 @@ function App() {
                           descricao={item.descricao}
                           composicao={item.composicao}
                         />
+
                         <Description
                           title={item.nome}
-                          estilo="description-top"
+                          estilo="description-bottom"
                           reference={item.referencia}
                           tamanho={item.tamanhos}
                           valor={item.valor}
