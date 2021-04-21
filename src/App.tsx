@@ -8,6 +8,7 @@ import CardThree from "./components/CardThree";
 import CardTwo from "./components/CardTwo";
 import Contracapa from "./components/ContraCapa";
 import Description from "./components/Description";
+import Loading from "./components/Loading";
 import api from "./services/api";
 
 interface ICatalogo {
@@ -54,38 +55,24 @@ function App() {
     const response = await api.get("catalogo");
     setCatalogo(response.data);
   }
-  async function loadItenscatalogo(produtoId:string) {
+  async function loadItenscatalogo(produtoId: string) {
     // const response = await api.get(`itensCatalogo/${catalogo.id}`);
     const response = await api.get(`produtos/${produtoId}`);
     // let novoArrayB = objetos.filter(objeto => objeto.nome === 'Gandalf');
     // const alimentos = produtos.filter(isAlimento);
-    console.log(response.data.nome);
+    //console.log(response.data.nome);
     //setProdutos(response.data);
+    return (
+      <CardOne image="" title="Produto 01">
+        <Description title="Produto 01" composicao="composicao" descricao="descricao" reference="1233" tamanho="P/M/G" valor="40,00" />
+      </CardOne>
+    )
   }
 
   return (
     <>
-      {catalogo.map((catalogopdf) => {
-        return (
-          <>
-            <Capa description={catalogopdf.nome} image={catalogopdf.capa} />
-
-            {catalogopdf.itens.map((item) => {
-              return (loadItenscatalogo(item.produtoId))
-            })}
-
-            <Contracapa
-              description={catalogopdf.nome}
-              image={catalogopdf.contracapa}
-            >
-              <p>
-                <strong>{catalogopdf.nome}</strong>
-                {catalogopdf.descricao}
-              </p>
-            </Contracapa>
-          </>
-        );
-      })}
+    <Loading />
+      
       <CardBrand>
         <img
           src="https://estacaodamodastore.vteximg.com.br/arquivos/LogoAlineMezzariBrand.svg"
