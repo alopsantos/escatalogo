@@ -8,326 +8,223 @@
       "contracapa": "https://github.com/alopsantos/ES-Catalog/blob/master/images/contra-capa.jpg?raw=true",
       "itens": [
         {
-          "produtoId": 12,
           "posicao": 1,
           "kit": "",
-          "layout": "CardOne"
+          "layout": "CardOne",
+          "produtoId": 12,
+          "nome": "Cropped Peace Branco",
+          "referencia": "2021006",
+          "valor": "99,90",
+          "descricao": "",
+          "composicao": "100% algodão",
+          "tamanhos": "P/M/G",
+          "imagens": [
+            "https://github.com/alopsantos/ES-Catalog/blob/master/images/produto-01.jpg?raw=true",
+            "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-02.jpg?raw=true",
+            "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-03.jpg?raw=true",
+            "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-04.jpg?raw=true",
+            "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-01.jpg?raw=true"
+          ]
         },
         {
-          "produtoId": 13,
           "posicao": 2,
           "kit": "",
-          "layout": "CardFour"
+          "layout": "CardFour",
+          "produtoId": 13,
+          "nome": "Cropped Peace Branco",
+          "referencia": "2021006",
+          "valor": "99,90",
+          "descricao": "",
+          "composicao": "100% algodão",
+          "tamanhos": "P/M/G",
+          "imagens": [
+            "https://github.com/alopsantos/ES-Catalog/blob/master/images/produto-01.jpg?raw=true",
+            "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-02.jpg?raw=true",
+            "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-03.jpg?raw=true",
+            "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-04.jpg?raw=true",
+            "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-01.jpg?raw=true"
+          ]
         },
         {
-          "produtoId": 14,
           "posicao": 3,
-          "kit": 20,
-          "layout": "CardTwo"
+          "kit": {
+            "produtoId": 18,
+            "nome": "Parka Dulcie Preto Tela e Renda",
+            "referencia": "1058",
+            "valor": "339,90",
+            "descricao": "",
+            "composicao": "",
+            "tamanhos": "M/G",
+            "imagens": [
+              "https://github.com/alopsantos/ES-Catalog/blob/master/images/produto-01.jpg?raw=true",
+              "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-02.jpg?raw=true",
+              "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-03.jpg?raw=true",
+              "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-04.jpg?raw=true",
+              "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-01.jpg?raw=true"
+            ]
+          },
+          "layout": "CardTwo",
+          "produtoId": 14,
+          "nome": "Cropped Peace Preto",
+          "referencia": "2021006",
+          "valor": "99,90",
+          "descricao": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+          "composicao": "100% algodão",
+          "tamanhos": "P/M/G",
+          "imagens": [
+            "https://github.com/alopsantos/ES-Catalog/blob/master/images/produto-01.jpg?raw=true",
+            "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-02.jpg?raw=true",
+            "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-03.jpg?raw=true",
+            "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-04.jpg?raw=true",
+            "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-01.jpg?raw=true"
+          ]
         },
         {
-          "produtoId": 15,
           "posicao": 4,
           "kit": "",
-          "layout": "CardOne"
+          "layout": "CardOne",
+          "produtoId": 15,
+          "nome": "Pantalona Karina Preto Tela",
+          "referencia": "1061",
+          "valor": "219,90",
+          "descricao": "",
+          "composicao": "",
+          "tamanhos": "P/M",
+          "imagens": [
+            "https://github.com/alopsantos/ES-Catalog/blob/master/images/produto-01.jpg?raw=true",
+            "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-02.jpg?raw=true",
+            "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-03.jpg?raw=true",
+            "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-04.jpg?raw=true",
+            "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-01.jpg?raw=true"
+          ]
         },
         {
-          "produtoId": 16,
           "posicao": 5,
           "kit": "",
-          "layout": "CardOne"
+          "layout": "CardOne",
+          "produtoId": 16,
+          "nome": "Top Bianca Preto Estampado",
+          "referencia": "1082",
+          "valor": "119,90",
+          "descricao": "",
+          "composicao": "",
+          "tamanhos": "P/M",
+          "imagens": [
+            "https://github.com/alopsantos/ES-Catalog/blob/master/images/produto-01.jpg?raw=true",
+            "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-02.jpg?raw=true",
+            "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-03.jpg?raw=true",
+            "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-04.jpg?raw=true",
+            "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-01.jpg?raw=true"
+          ]
         },
         {
-          "produtoId": 17,
           "posicao": 6,
           "kit": "",
-          "layout": "CardFour"
+          "layout": "CardFour",
+          "produtoId": 17,
+          "nome": "Macaquinho Rebeca Preto Estampado",
+          "referencia": "1013",
+          "valor": "299,90",
+          "descricao": "",
+          "composicao": "",
+          "tamanhos": "P/M",
+          "imagens": [
+            "https://github.com/alopsantos/ES-Catalog/blob/master/images/produto-01.jpg?raw=true",
+            "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-02.jpg?raw=true",
+            "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-03.jpg?raw=true",
+            "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-04.jpg?raw=true",
+            "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-01.jpg?raw=true"
+          ]
         },
         {
-          "produtoId": 18,
           "posicao": 7,
-          "kit": 20,
-          "layout": "CardTwo"
+          "kit": {
+            "nome": "Kimono Mariana Preto Estampado",
+            "referencia": "1078",
+            "valor": "239,90",
+            "descricao": "",
+            "composicao": "",
+            "tamanhos": "P/M/G",
+            "imagens": [
+              "https://github.com/alopsantos/ES-Catalog/blob/master/images/produto-01.jpg?raw=true",
+              "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-02.jpg?raw=true",
+              "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-03.jpg?raw=true",
+              "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-04.jpg?raw=true",
+              "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-01.jpg?raw=true"
+            ]
+          },
+          "layout": "CardTwo",
+          "produtoId": 18,
+          "nome": "Parka Dulcie Preto Tela e Renda",
+          "referencia": "1058",
+          "valor": "339,90",
+          "descricao": "",
+          "composicao": "",
+          "tamanhos": "M/G",
+          "imagens": [
+            "https://github.com/alopsantos/ES-Catalog/blob/master/images/produto-01.jpg?raw=true",
+            "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-02.jpg?raw=true",
+            "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-03.jpg?raw=true",
+            "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-04.jpg?raw=true",
+            "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-01.jpg?raw=true"
+          ]
         },
         {
-          "produtoId": 19,
           "posicao": 8,
           "kit": "",
-          "layout": "CardOne"
+          "layout": "CardOne",
+          "produtoId": 19,
+          "nome": "Corselet Clara Off Alfaiataria",
+          "referencia": "1052",
+          "valor": "179,90",
+          "descricao": "",
+          "composicao": "Alfaiataria",
+          "tamanhos": "M/G",
+          "imagens": [
+            "https://github.com/alopsantos/ES-Catalog/blob/master/images/produto-01.jpg?raw=true",
+            "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-02.jpg?raw=true",
+            "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-03.jpg?raw=true",
+            "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-04.jpg?raw=true",
+            "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-01.jpg?raw=true"
+          ]
         },
         {
-          "produtoId": 20,
           "posicao": 9,
           "kit": "",
-          "layout": "CardOne"
+          "layout": "CardOne",
+          "produtoId": 20,
+          "nome": "Shorts Eduarda Preto Couro e Tela",
+          "referencia": "1045",
+          "valor": "179,90",
+          "descricao": "",
+          "composicao": "",
+          "tamanhos": "P/M/G",
+          "imagens": [
+            "https://github.com/alopsantos/ES-Catalog/blob/master/images/produto-01.jpg?raw=true",
+            "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-02.jpg?raw=true",
+            "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-03.jpg?raw=true",
+            "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-04.jpg?raw=true",
+            "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-01.jpg?raw=true"
+          ]
         },
         {
-          "produtoId": 21,
           "posicao": 10,
           "kit": "",
-          "layout": "CardFour"
-        }
-      ]
-    }
-  ],
-  "produtos": [
-    {
-      "id": 12,
-      "nome": "Cropped Peace Branco",
-      "referencia": "2021006",
-      "valor": "99,90",
-      "descricao": "",
-      "composicao": "100% algodão",
-      "tamanhos": "P/M/G",
-      "imagens": [
-        {
-          "0": "https://github.com/alopsantos/ES-Catalog/blob/master/images/produto-01.jpg?raw=true"
-        },
-        {
-          "1": "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-02.jpg?raw=true"
-        },
-        {
-          "2": "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-03.jpg?raw=true"
-        },
-        {
-          "3": "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-04.jpg?raw=true"
-        },
-        {
-          "4": "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-01.jpg?raw=true"
-        }
-      ]
-    },
-    {
-      "id": 13,
-      "nome": "Cropped Peace Preto",
-      "referencia": "2021006",
-      "valor": "99,90",
-      "descricao": "",
-      "composicao": "100% algodão",
-      "tamanhos": "P/M/G",
-      "imagens": [
-        {
-          "0": "https://github.com/alopsantos/ES-Catalog/blob/master/images/produto-01.jpg?raw=true"
-        },
-        {
-          "1": "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-02.jpg?raw=true"
-        },
-        {
-          "2": "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-03.jpg?raw=true"
-        },
-        {
-          "3": "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-04.jpg?raw=true"
-        },
-        {
-          "4": "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-01.jpg?raw=true"
-        }
-      ]
-    },
-    {
-      "id": 14,
-      "nome": "Pantalona Karina Preto Tela",
-      "referencia": "1061",
-      "valor": "219,90",
-      "descricao": "",
-      "composicao": "",
-      "tamanhos": "P/M",
-      "imagens": [
-        {
-          "0": "https://github.com/alopsantos/ES-Catalog/blob/master/images/produto-01.jpg?raw=true"
-        },
-        {
-          "1": "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-02.jpg?raw=true"
-        },
-        {
-          "2": "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-03.jpg?raw=true"
-        },
-        {
-          "3": "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-04.jpg?raw=true"
-        },
-        {
-          "4": "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-01.jpg?raw=true"
-        }
-      ]
-    },
-    {
-      "id": 15,
-      "nome": "Top Bianca Preto Estampado",
-      "referencia": "1082",
-      "valor": "119,90",
-      "descricao": "",
-      "composicao": "",
-      "tamanhos": "P/M",
-      "imagens": [
-        {
-          "0": "https://github.com/alopsantos/ES-Catalog/blob/master/images/produto-01.jpg?raw=true"
-        },
-        {
-          "1": "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-02.jpg?raw=true"
-        },
-        {
-          "2": "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-03.jpg?raw=true"
-        },
-        {
-          "3": "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-04.jpg?raw=true"
-        },
-        {
-          "4": "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-01.jpg?raw=true"
-        }
-      ]
-    },
-    {
-      "id": 16,
-      "nome": "Macaquinho Rebeca Preto Estampado",
-      "referencia": "1013",
-      "valor": "299,90",
-      "descricao": "",
-      "composicao": "",
-      "tamanhos": "P/M",
-      "imagens": [
-        {
-          "0": "https://github.com/alopsantos/ES-Catalog/blob/master/images/produto-01.jpg?raw=true"
-        },
-        {
-          "1": "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-02.jpg?raw=true"
-        },
-        {
-          "2": "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-03.jpg?raw=true"
-        },
-        {
-          "3": "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-04.jpg?raw=true"
-        },
-        {
-          "4": "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-01.jpg?raw=true"
-        }
-      ]
-    },
-    {
-      "id": 17,
-      "nome": "Parka Dulcie Preto Tela e Renda",
-      "referencia": "1058",
-      "valor": "339,90",
-      "descricao": "",
-      "composicao": "",
-      "tamanhos": "M/G",
-      "imagens": [
-        {
-          "0": "https://github.com/alopsantos/ES-Catalog/blob/master/images/produto-01.jpg?raw=true"
-        },
-        {
-          "1": "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-02.jpg?raw=true"
-        },
-        {
-          "2": "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-03.jpg?raw=true"
-        },
-        {
-          "3": "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-04.jpg?raw=true"
-        },
-        {
-          "4": "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-01.jpg?raw=true"
-        }
-      ]
-    },
-    {
-      "id": 18,
-      "nome": "Corselet Clara Off Alfaiataria",
-      "referencia": "1052",
-      "valor": "179,90",
-      "descricao": "",
-      "composicao": "Alfaiataria",
-      "tamanhos": "M/G",
-      "imagens": [
-        {
-          "0": "https://github.com/alopsantos/ES-Catalog/blob/master/images/produto-01.jpg?raw=true"
-        },
-        {
-          "1": "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-02.jpg?raw=true"
-        },
-        {
-          "2": "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-03.jpg?raw=true"
-        },
-        {
-          "3": "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-04.jpg?raw=true"
-        },
-        {
-          "4": "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-01.jpg?raw=true"
-        }
-      ]
-    },
-    {
-      "id": 19,
-      "nome": "Shorts Eduarda Preto Couro e Tela",
-      "referencia": "1045",
-      "valor": "179,90",
-      "descricao": "",
-      "composicao": "",
-      "tamanhos": "P/M/G",
-      "imagens": [
-        {
-          "0": "https://github.com/alopsantos/ES-Catalog/blob/master/images/produto-01.jpg?raw=true"
-        },
-        {
-          "1": "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-02.jpg?raw=true"
-        },
-        {
-          "2": "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-03.jpg?raw=true"
-        },
-        {
-          "3": "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-04.jpg?raw=true"
-        },
-        {
-          "4": "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-01.jpg?raw=true"
-        }
-      ]
-    },
-    {
-      "id": 20,
-      "nome": "Corselet Clara Pink Alfaiataria",
-      "referencia": "1052",
-      "valor": "179,90",
-      "descricao": "",
-      "composicao": "Alfaiataria",
-      "tamanhos": "P/M/G",
-      "imagens": [
-        {
-          "0": "https://github.com/alopsantos/ES-Catalog/blob/master/images/produto-01.jpg?raw=true"
-        },
-        {
-          "1": "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-02.jpg?raw=true"
-        },
-        {
-          "2": "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-03.jpg?raw=true"
-        },
-        {
-          "3": "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-04.jpg?raw=true"
-        },
-        {
-          "4": "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-01.jpg?raw=true"
-        }
-      ]
-    },
-    {
-      "id": 21,
-      "nome": "Kimono Mariana Preto Estampado",
-      "referencia": "1078",
-      "valor": "239,90",
-      "descricao": "",
-      "composicao": "",
-      "tamanhos": "P/M/G",
-      "imagens": [
-        {
-          "0": "https://github.com/alopsantos/ES-Catalog/blob/master/images/produto-01.jpg?raw=true"
-        },
-        {
-          "1": "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-02.jpg?raw=true"
-        },
-        {
-          "2": "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-03.jpg?raw=true"
-        },
-        {
-          "3": "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-04.jpg?raw=true"
-        },
-        {
-          "4": "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-01.jpg?raw=true"
+          "layout": "CardFour",
+          "produtoId": 21,
+          "nome": "Corselet Clara Pink Alfaiataria",
+          "referencia": "1052",
+          "valor": "179,90",
+          "descricao": "",
+          "composicao": "Alfaiataria",
+          "tamanhos": "P/M/G",
+          "imagens": [
+            "https://github.com/alopsantos/ES-Catalog/blob/master/images/produto-01.jpg?raw=true",
+            "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-02.jpg?raw=true",
+            "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-03.jpg?raw=true",
+            "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-04.jpg?raw=true",
+            "https://github.com/alopsantos/ES-Catalog/blob/master/images/foto-01.jpg?raw=true"
+          ]
         }
       ]
     }
