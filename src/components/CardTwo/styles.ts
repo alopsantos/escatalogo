@@ -7,12 +7,10 @@ export const Cardtwocss = styled.section`
     display: flex;
     
     h1 {
-      color: orange;
       font-size: 25px;
     }
     
     strong {
-      color: orange;
       font-size: 20px;
       display: block;
       margin-top: 10px;

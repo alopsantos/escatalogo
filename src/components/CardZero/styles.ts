@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Cardzerocss = styled.section`
   img {
     width: 100%;
-    opacity: 0.4;
+    height: 100%;
   }
   @media print{
     img{

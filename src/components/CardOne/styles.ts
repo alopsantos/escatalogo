@@ -9,7 +9,6 @@ export const Cardonecss = styled.section`
   }
   
   h1{
-    color: orange;
     font-size: 25px;
   }
 
@@ -24,7 +23,6 @@ export const Cardonecss = styled.section`
   }
 
   strong{
-    color: orange;
     font-size: 20px;
     display: block;
     margin-top: 10px;

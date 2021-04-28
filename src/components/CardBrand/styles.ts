@@ -13,7 +13,7 @@ export const Cardbrandcss = styled.section`
       margin: 40px auto;
       width: 368px;
 
-      img {
+      svg {
         margin-right: 20px;
         width: 50px;
       }

@@ -1,4 +1,5 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
+import { FaWhatsapp, FaInstagram } from "react-icons/fa";
 
 import Capa from "./components/Capa";
 import CardBrand from "./components/CardBrand";
@@ -6,9 +7,9 @@ import CardFour from "./components/CardFour";
 import CardOne from "./components/CardOne";
 import CardThree from "./components/CardThree";
 import CardTwo from "./components/CardTwo";
+import CardZero from "./components/CardZero";
 import Contracapa from "./components/ContraCapa";
 import Description from "./components/Description";
-import Loading from "./components/Loading";
 import api from "./services/api";
 
 interface ICatalogo {
@@ -17,17 +18,15 @@ interface ICatalogo {
   descricao: string;
   capa: string;
   contracapa: string;
-  itens: IProdutos[];
+  cor: string;
+  itens: IItens[];
   posicao: number | string;
-  kit: number | string;
 }
 interface IItens {
-}
-interface IProdutos {
   id: number;
+  kit: IProdutos;
   catalogoId: number;
-  produtoId: number;
-  layout: "CardOne" | "CardTwo" | "CardThree" | "CardFour";
+  layout: "CardZero" | "CardOne" | "CardTwo" | "CardThree" | "CardFour";
   nome: string;
   referencia: string;
   valor: string;
@@ -36,105 +35,150 @@ interface IProdutos {
   tamanhos: string;
   imagens: string[];
 }
+interface IProdutos {
+  produtoId: number;
+  nome: string;
+  referencia: string;
+  valor: string;
+  descricao: string;
+  composicao: string;
+  tamanhos: string;
+  imagens: string[];
+}
+interface IBrand {
+  instagram: string;
+  logo: string;
+  loja: ILoja[];
+}
+interface ILoja {
+  nome: string;
+  endereco: string;
+  cep: string;
+  telefone: string;
+  whatsapp: string;
+}
 
 function App() {
-  const [catalogo, setCatalogo] = useState<ICatalogo[]>([]);
-  const [produtos, setProdutos] = useState<IProdutos[]>([]);
-  //const [itens, setItens] = useState([]);
+  const [catalogo, setCatalogo] = useState<ICatalogo>();
+  const [brand, setBrand] = useState<IBrand>();
 
   useEffect(() => {
-    loadCatalogo();
+    carregarCatalogo();
+    carregarBrand();
   }, []);
-  async function loadCatalogo() {
-    const response = await api.get("catalogo");
-    setCatalogo(response.data);
+
+  async function carregarCatalogo() {
+    const resulte = await api.get("catalogo/1");
+    setCatalogo(resulte.data);
   }
 
-  function listarCardtwo() {
-
+  async function carregarBrand() {
+    const resulte = await api.get("brand/1");
+    setBrand(resulte.data);
   }
 
   return (
     <>
-      {catalogo.map(catalogoPdf => {
-        return (
-          <Fragment key={catalogoPdf.id}>
-            <Capa description={catalogoPdf.nome} image={catalogoPdf.capa} />
-            <Contracapa description={catalogoPdf.descricao} image={catalogoPdf.contracapa}>
-              <p>
-                <strong>
-                  {catalogoPdf.nome}
-                </strong>
-                {catalogoPdf.descricao}
-              </p>
-            </Contracapa>
-            {catalogoPdf.itens.map(item => {
-              switch (item.layout) {
-                case "CardOne":
-                  return (
-                    <CardOne key={item.id} image={item.imagens[0]} title={item.nome}>
-                      <Description title={item.nome} descricao={item.descricao} composicao={item.composicao} reference={item.referencia} tamanho={item.tamanhos} valor={item.valor} />
-                    </CardOne>
-                  );
-                case "CardTwo":
-                  return (
-                    <CardTwo image={item.imagens[0]} title={item.nome} >
-                      <Description descricao={item.descricao} composicao={item.composicao} reference={item.referencia} tamanho={item.tamanhos} title={item.nome} valor={item.valor} estilo="description-two" />
-                    </CardTwo>
-                  )
-                case "CardThree":
-                  return (
-                    <CardThree  key={item.id} imagens={item.imagens} descricao={item.nome} />
-                  )
-                case "CardFour":
-                  return (
-                    <CardFour key={item.id} imagens={item.imagens} descricao={item.nome} />
-                  )
-                default:
-                  console.log("Padrao");
-              }
-            })}
-          </Fragment>
-        )
-
+      <Capa description={catalogo?.nome} image={catalogo?.capa} />
+      <Contracapa
+        description={catalogo?.descricao}
+        image={catalogo?.contracapa}
+      >
+        <p>
+          <strong>{catalogo?.nome}</strong>
+          {catalogo?.descricao}
+        </p>
+      </Contracapa>
+      {catalogo?.itens.map((item) => {
+        switch (item.layout) {
+          case "CardZero":
+            return <CardZero image={item.imagens[5]} description={item.nome} />;
+          case "CardOne":
+            return (
+              <CardOne key={item.id} image={item.imagens[0]} title={item.nome}>
+                <Description
+                  title={item.nome}
+                  descricao={item.descricao}
+                  composicao={item.composicao}
+                  reference={item.referencia}
+                  tamanho={item.tamanhos}
+                  valor={item.valor}
+                  estilo="description-one"
+                  cor={catalogo.cor}
+                />
+              </CardOne>
+            );
+          case "CardTwo":
+            return (
+              <CardTwo image={item.imagens[0]} title={item.nome}>
+                <Description
+                  descricao={item.descricao}
+                  composicao={item.composicao}
+                  reference={item.referencia}
+                  tamanho={item.tamanhos}
+                  title={item.nome}
+                  valor={item.valor}
+                  estilo="description-top"
+                  cor={catalogo.cor}
+                />
+                <Description
+                  descricao={item.kit.descricao}
+                  composicao={item.kit.composicao}
+                  reference={item.kit.referencia}
+                  tamanho={item.kit.tamanhos}
+                  title={item.kit.nome}
+                  valor={item.kit.valor}
+                  estilo="description-bottom"
+                  cor={catalogo.cor}
+                />
+              </CardTwo>
+            );
+          case "CardThree":
+            return (
+              <CardThree
+                key={item.id}
+                imagens={item.imagens}
+                descricao={item.nome}
+              />
+            );
+          case "CardFour":
+            return (
+              <CardFour
+                key={item.id}
+                imagens={item.imagens}
+                descricao={item.nome}
+              />
+            );
+          default:
+            break;
+        }
       })}
       <CardBrand>
-        <img
-          src="https://estacaodamodastore.vteximg.com.br/arquivos/LogoAlineMezzariBrand.svg"
-          width="500px"
-          alt=""
-        />
+        <img src={brand?.logo} width="500px" alt={brand?.instagram} />
         <p>
-          <img
-            src="https://estacaodamodastore.vteximg.com.br/arquivos/instagram.svg"
-            alt=""
-          />
-          @alinemezzaribrand
+          <FaInstagram size="48" color={catalogo?.cor} />
+          {brand?.instagram}
         </p>
         <p>
-          <img
-            src="https://estacaodamodastore.vteximg.com.br/arquivos/whatsapp.svg"
-            alt=""
-          />
+          <FaWhatsapp size="48" color={catalogo?.cor} />
           <span>
-            Santa Terezinha de Itaipu - PR
+            {brand?.loja[0].nome}
             <br />
-            Rua dos estudantes, 1906 - Centro <br />
-            CEP: 85875-000 <br />
-            (45) 9135-5885 <br />
+            {brand?.loja[0].endereco}<br />
+            Cep: {brand?.loja[0].cep}<br />
+            {brand?.loja[0].telefone ? brand?.loja[0].telefone : ""}<br />
+            {brand?.loja[0].whatsapp}<br />
           </span>
         </p>
         <p>
-          <img
-            src="https://estacaodamodastore.vteximg.com.br/arquivos/whatsapp.svg"
-            alt=""
-          />
+          <FaWhatsapp size="48" color={catalogo?.cor} />
           <span>
-            São Paulo - SP <br />
-            Rua Professor Cesare Lombroso, 259 <br />
-            Fashion Mall - Loja 41 <br />
-            CEP: 01122-020 <br />
-            (11) 94457-9998 <br />
+            {brand?.loja[1].nome}
+            <br />
+            {brand?.loja[1].endereco}<br />
+            Cep: {brand?.loja[1].cep}<br />
+            {brand?.loja[1].telefone ? brand?.loja[1].telefone : ""}<br />
+            {brand?.loja[1].whatsapp}<br />
           </span>
         </p>
       </CardBrand>

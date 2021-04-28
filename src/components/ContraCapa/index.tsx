@@ -3,8 +3,8 @@ import React from 'react';
 import { Contracapacss } from './styles';
 
 interface IContracapa{
-  image: string;
-  description: string;
+  image: string | undefined;
+  description: string | undefined;
 }
 const ContraCapa: React.FC<IContracapa> = ({image, description, children}) => {
   return(

@@ -15,7 +15,6 @@ const CardOne: React.FC<ICardone> = ({
     <Cardonecss className="sheet">
       <article>
         <img src={image} alt={"Imagem " + title} />
-
         {children}
       </article>
     </Cardonecss>

@@ -7,17 +7,12 @@ interface ICardtwo {
   title: string;
 }
 
-const CardTwo: React.FC<ICardtwo> = ({
-  image,
-  title,
-  children,
-}) => {
+const CardTwo: React.FC<ICardtwo> = ({ image, title, children }) => {
   return (
     <Cardtwocss className="sheet">
       <article>
         <img src={image} alt={"Imagem " + title} />
-
-        {children}
+        <div className="description-two">{children}</div>
       </article>
     </Cardtwocss>
   );

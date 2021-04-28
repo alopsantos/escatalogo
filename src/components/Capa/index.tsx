@@ -3,8 +3,8 @@ import React from "react";
 import { Capacss } from "./styles";
 
 interface ICapa {
-  image: string;
-  description: string;
+  image: string | undefined;
+  description: string | undefined;
 }
 
 const Capa: React.FC<ICapa> = ({ image, description }) => {
