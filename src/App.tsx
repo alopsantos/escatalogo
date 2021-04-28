@@ -46,13 +46,11 @@ function App() {
     loadCatalogo();
   }, []);
   async function loadCatalogo() {
-    const response = await api.get("catalogo");
+    const response = await api.get("catalogo/1");
     setCatalogo(response.data);
   }
 
-  function listarCardtwo() {
 
-  }
 
   return (
     <>
