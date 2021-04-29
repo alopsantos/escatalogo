@@ -11,7 +11,7 @@ interface ICatalogo {
   descricao: string;
   itens: string[];
 }
-const Dashboard: React.FC = () => {
+const Produtos: React.FC = () => {
   const [catalogo, setCatalogo] = useState<ICatalogo[]>([]);
 
   useEffect(() => {
@@ -30,18 +30,23 @@ const Dashboard: React.FC = () => {
       </Containerheader>
       <Container>
         <section>
+          <input type="text"/>
+          <button>Buscar</button>
+        </section>
+        <section>
           <h2 className="sr-only">Catalogos</h2>
 
           <a href="#" >
-            + Novo Catálogo
+            + Novo Produto
           </a>
           <table>
             <thead>
               <tr>
                 <th>Codigo</th>
+                <th>Referencia</th>
                 <th>Nome</th>
-                <th>Descrição</th>
-                <th>Produtos</th>
+                <th>Valor</th>
+                <th>Grade</th>
                 <th></th>
                 <th></th>
               </tr>
@@ -52,8 +57,9 @@ const Dashboard: React.FC = () => {
                 return (
                   <tr>
                     <td key={catalogo.id}>{catalogo.id}</td>
+                    <td>{catalogo.id}</td>
                     <td>{catalogo.nome}</td>
-                    <td>{catalogo.descricao.substr(0, 40)}...</td>
+                    <td>{catalogo.itens.length}</td>
                     <td>{catalogo.itens.length}</td>
                     <td>
                       <FaRegEdit size="22" color="blue" />
@@ -75,4 +81,4 @@ const Dashboard: React.FC = () => {
   );
 };
 
-export default Dashboard;
+export default Produtos;

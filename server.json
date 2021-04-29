@@ -232,8 +232,8 @@
     },
     {
       "id": 2,
-      "nome": "Urban Girl",
-      "descricao": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+      "nome": "Play it Cool",
+      "descricao": "traz o entusiasmo da estação, com peças que possuem um equilibrio entre si, dando a oportunidade de composições aconchegantes e cheias de estilo.",
       "capa": "https://github.com/alopsantos/ES-Catalog/blob/master/images/capa.jpg?raw=true",
       "contracapa": "https://github.com/alopsantos/ES-Catalog/blob/master/images/contra-capa.jpg?raw=true",
       "itens": [
