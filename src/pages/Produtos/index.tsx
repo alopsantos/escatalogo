@@ -1,9 +1,17 @@
 import React, { useEffect, useState } from "react";
-import { FaRegEdit, FaTrashAlt } from "react-icons/fa";
+import {
+  MinusCircle,
+  Edit,
+  Package,
+  Clipboard,
+  Award
+} from "react-feather";
 
 import api from "../../services/api";
 import Logo from "../../assets/images/logo.svg";
 import { Containerheader, Container, Footer } from "./styles";
+import Cardstatus from "../../components/CardStatus";
+import { Link } from "react-router-dom";
 
 interface ICatalogo {
   id: number;
@@ -29,6 +37,11 @@ const Produtos: React.FC = () => {
         <img src={Logo} width="110" alt="Logo Aline Mezzari Brand" />
       </Containerheader>
       <Container>
+      <section id="menucard">
+          <Cardstatus pagina="/" titulo="Catalogo" icon={Clipboard} />
+          <Cardstatus pagina="produtos" titulo="Produtos" icon={Package} />
+          <Cardstatus pagina="marca" titulo="Marca" icon={Award} />
+        </section>
         <section>
           <input type="text"/>
           <button>Buscar</button>
@@ -36,9 +49,9 @@ const Produtos: React.FC = () => {
         <section>
           <h2 className="sr-only">Catalogos</h2>
 
-          <a href="#" >
+          <Link to="/">
             + Novo Produto
-          </a>
+          </Link>
           <table>
             <thead>
               <tr>
@@ -62,10 +75,10 @@ const Produtos: React.FC = () => {
                     <td>{catalogo.itens.length}</td>
                     <td>{catalogo.itens.length}</td>
                     <td>
-                      <FaRegEdit size="22" color="blue" />
+                      <Edit size="22" color="blue" />
                     </td>
                     <td>
-                      <FaTrashAlt size="22" color="red" />
+                      <MinusCircle size="22" color="red" />
                     </td>
                   </tr>
                 );

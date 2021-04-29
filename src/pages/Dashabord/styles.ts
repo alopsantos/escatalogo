@@ -2,34 +2,59 @@ import styled from "styled-components";
 
 export const Containerheader = styled.header`
   background-color: #ccc;
-  padding: 2rem 0 2rem;
+  padding: 2rem 0 8rem;
 
   display: flex;
   justify-content: center;
-
 `;
 
 export const Container = styled.section`
   width: min(90vw, 800px);
   margin: auto;
 
-  section{
+  section {
     display: block;
     width: 100%;
     overflow-x: auto;
     margin-top: 20px;
+
+    &#menucard {
+      margin-top: -4rem;
+    }
+
+    button {
+      width: 20%;
+      height: 50px;
+      border: none;
+      color: #fff;
+      background: var(--dark-green);
+      padding: 0;
+      border-radius: 0.25rem;
+      cursor: pointer;
+
+      &.cancelar {
+        background: var(--dark-red);
+      }
+    }
+    @media (min-width: 800px) {
+      &#menucard {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+    }
   }
 
   h2 {
     font-family: "Poppins", sans-serif;
     font-size: 1.2rem;
-    color: #EF1C8F;
+    color: #ef1c8f;
 
-    &.sr-only{
+    &.sr-only {
       position: absolute;
       width: 1px;
       height: 1px;
-      padding:0;
+      padding: 0;
       margin: --1px;
       overflow: hidden;
       clip: rect(0, 0, 0, 0);
@@ -37,13 +62,13 @@ export const Container = styled.section`
       border-width: 0;
     }
   }
-  a{
-    color: #49AA26;
+  a {
+    color: #49aa26;
     text-decoration: none;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     cursor: pointer;
-    &:hover{
-      color: #3DD705;
+    &:hover {
+      color: #3dd705;
     }
   }
   table {
@@ -53,6 +78,10 @@ export const Container = styled.section`
     font-family: "Poppins", sans-serif;
     font-size: 1rem;
 
+    svg {
+      cursor: pointer;
+    }
+    
     thead tr th:first-child,
     tbody tr td:first-child {
       border-radius: 0.25rem 0 0 0.25rem;

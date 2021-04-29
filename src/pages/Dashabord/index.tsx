@@ -1,9 +1,19 @@
 import React, { useEffect, useState } from "react";
-import { FaRegEdit, FaTrashAlt } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import {
+  MinusCircle,
+  Edit,
+  Package,
+  Clipboard,
+  Award,
+  FilePlus,
+} from "react-feather";
 
 import api from "../../services/api";
 import Logo from "../../assets/images/logo.svg";
 import { Containerheader, Container, Footer } from "./styles";
+import Cardstatus from "../../components/CardStatus";
+import CadastroCatalogoModal from "../../components/Modal/CadastroCatalogoModal";
 
 interface ICatalogo {
   id: number;
@@ -13,6 +23,7 @@ interface ICatalogo {
 }
 const Dashboard: React.FC = () => {
   const [catalogo, setCatalogo] = useState<ICatalogo[]>([]);
+  const [isModalVisible, setIsModalVisible] = useState(false);
 
   useEffect(() => {
     carregarCatalogo();
@@ -29,15 +40,24 @@ const Dashboard: React.FC = () => {
         <img src={Logo} width="110" alt="Logo Aline Mezzari Brand" />
       </Containerheader>
       <Container>
+        <section id="menucard">
+          <Cardstatus pagina="/" titulo="Catalogo" icon={Clipboard} />
+          <Cardstatus pagina="/produtos" titulo="Produtos" icon={Package} />
+          <Cardstatus pagina="/marca" titulo="Marca" icon={Award} />
+        </section>
         <section>
           <h2 className="sr-only">Catalogos</h2>
 
-          <a href="#" >
-            + Novo Catálogo
-          </a>
           <table>
             <thead>
               <tr>
+                <th>
+                  <FilePlus
+                    size="22"
+                    color="green"
+                    onClick={() => setIsModalVisible(true)}
+                  />
+                </th>
                 <th>Codigo</th>
                 <th>Nome</th>
                 <th>Descrição</th>
@@ -50,16 +70,17 @@ const Dashboard: React.FC = () => {
             <tbody>
               {catalogo.map((catalogo) => {
                 return (
-                  <tr>
-                    <td key={catalogo.id}>{catalogo.id}</td>
+                  <tr key={catalogo.id}>
+                    <td></td>
+                    <td>{catalogo.id}</td>
                     <td>{catalogo.nome}</td>
                     <td>{catalogo.descricao.substr(0, 40)}...</td>
                     <td>{catalogo.itens.length}</td>
                     <td>
-                      <FaRegEdit size="22" color="blue" />
+                      <Edit size="22" color="blue" />
                     </td>
                     <td>
-                      <FaTrashAlt size="22" color="red" />
+                      <MinusCircle size="22" color="red" />
                     </td>
                   </tr>
                 );
@@ -68,6 +89,10 @@ const Dashboard: React.FC = () => {
           </table>
         </section>
       </Container>
+
+      {isModalVisible ? (
+        <CadastroCatalogoModal onClose={() => setIsModalVisible(false)} />
+      ) : null}
       <Footer>
         <h3>by: Anderson Lopes</h3>
       </Footer>
