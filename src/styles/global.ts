@@ -24,6 +24,7 @@ body{
   font-family: 'Poppins', sans-serif;
 }
 input, button{
+  font-family: 'Poppins', sans-serif;
   font-size: 1.0rem;
 }
 `;

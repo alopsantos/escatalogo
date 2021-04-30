@@ -5,6 +5,7 @@ import { FormHandles } from "@unform/core";
 import { Form } from "@unform/web";
 
 import { Container } from "./styles";
+import Button from "../../components/Button";
 
 const Testecomponentes: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
@@ -14,6 +15,8 @@ const Testecomponentes: React.FC = () => {
         <Input name="email" icon={FiMail} placeholder="Email" />
         <Input name="email" icon={FiMail} placeholder="Email" />
         <Input name="email" icon={FiMail} placeholder="Email" />
+
+        <Button type="submit">Cadastrar</Button>
       </Form>
     </Container>
   );
