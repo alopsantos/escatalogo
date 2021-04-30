@@ -14,7 +14,7 @@ import api from "../../services/api";
 import Logo from "../../assets/images/logo.svg";
 import { Containerheader, Container, Footer } from "./styles";
 import Cardstatus from "../../components/CardStatus";
-import CadastroProdutoModal from "../../components/Modal/CadastroProdutoModal";
+import CadastroBrandModal from "../../components/Modal/CadastroBrandModal";
 
 interface IBrand {
   id: number;
@@ -99,7 +99,7 @@ const Produtos: React.FC = () => {
       </Container>
 
       {isModalVisible ? (
-        <CadastroProdutoModal onClose={() => setIsModalVisible(false)} />
+        <CadastroBrandModal onClose={() => setIsModalVisible(false)} />
       ) : null}
       <Footer>
         <h3>by: Anderson Lopes</h3>

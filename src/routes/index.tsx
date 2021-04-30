@@ -6,10 +6,11 @@ import Catalogo from "../pages/Catalogo";
 import CreateCatalogo from "../pages/CreateCatalogo";
 import Produtos from "../pages/Produtos";
 import Brand from "../pages/Brand";
+import Testecomponentes from "../pages/TesteComponentes";
 
 const Routes: React.FC = () => (
   <Switch>
-    <Route path="/" exact component={Dashboard} />
+    <Route path="/" exact component={Testecomponentes} />
     <Route path="/catalogo" component={Catalogo} />
     <Route path="/produtos" component={Produtos} />
     <Route path="/criarcatalogo" component={CreateCatalogo} />
