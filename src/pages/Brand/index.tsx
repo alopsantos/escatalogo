@@ -15,6 +15,9 @@ import Logo from "../../assets/images/logo.svg";
 import { Containerheader, Container, Footer } from "./styles";
 import Cardstatus from "../../components/CardStatus";
 import CadastroBrandModal from "../../components/Modal/CadastroBrandModal";
+import { Form } from "@unform/web";
+import Input from "../../components/Input";
+import { FiSearch } from "react-icons/fi";
 
 interface IBrand {
   id: number;
@@ -53,8 +56,16 @@ const Produtos: React.FC = () => {
           <Cardstatus pagina="marca" titulo="Marca" icon={Award} />
         </section>
         <section>
-          <input type="text" />
-          <button>Buscar</button>
+        <Form onSubmit={() => {}}>
+            <div>
+              <Input
+                type="text"
+                name="seach"
+                icon={FiSearch}
+                placeholder="Buscar um marca"
+              />
+            </div>
+          </Form>
         </section>
         <section>
           <h2 className="sr-only">Catalogos</h2>

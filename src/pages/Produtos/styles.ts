@@ -17,6 +17,7 @@ export const Container = styled.section`
     width: 100%;
     overflow-x: auto;
     margin-top: 20px;
+    margin-bottom: 30px;
 
     &#menucard {
       margin-top: -4rem;
@@ -30,14 +31,6 @@ export const Container = styled.section`
       }
     }
 
-    form{
-      display: grid;
-      grid-row: 1fr;
-
-      div{
-        width: 50%;
-      }
-    }
   }
 
   h2 {

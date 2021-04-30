@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { FiSearch } from "react-icons/fi";
+import { Form } from "@unform/web";
 import {
-  MinusCircle,
   Edit,
   Package,
   Clipboard,
@@ -8,18 +10,15 @@ import {
   FilePlus,
   Trash2,
 } from "react-feather";
-import { Form } from "@unform/web";
-import { FiSearch } from "react-icons/fi";
 
-import { Link } from "react-router-dom";
 
 import api from "../../services/api";
 import Logo from "../../assets/images/logo.svg";
-import { Containerheader, Container, Footer } from "./styles";
 import Cardstatus from "../../components/CardStatus";
 import CadastroProdutoModal from "../../components/Modal/CadastroProdutoModal";
 import Input from "../../components/Input";
-import Button from "../../components/Button";
+
+import { Containerheader, Container, Footer } from "./styles";
 
 interface ICatalogo {
   id: number;
@@ -56,13 +55,10 @@ const Produtos: React.FC = () => {
             <div>
               <Input
                 type="text"
-                name="email"
+                name="search"
                 icon={FiSearch}
                 placeholder="Buscar um produto"
               />
-            </div>
-            <div>
-              <Button type="submit">Buscar</Button>
             </div>
           </Form>
         </section>

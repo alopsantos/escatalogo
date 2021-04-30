@@ -15,6 +15,9 @@ import Logo from "../../assets/images/logo.svg";
 import { Containerheader, Container, Footer } from "./styles";
 import Cardstatus from "../../components/CardStatus";
 import CadastroCatalogoModal from "../../components/Modal/CadastroCatalogoModal";
+import { Form } from "@unform/web";
+import Input from "../../components/Input";
+import { FiSearch } from "react-icons/fi";
 
 interface ICatalogo {
   id: number;
@@ -45,6 +48,18 @@ const Dashboard: React.FC = () => {
           <Cardstatus pagina="/" titulo="Catalogo" icon={Clipboard} />
           <Cardstatus pagina="/produtos" titulo="Produtos" icon={Package} />
           <Cardstatus pagina="/marca" titulo="Marca" icon={Award} />
+        </section>
+        <section>
+        <Form onSubmit={() => {}}>
+            <div>
+              <Input
+                type="text"
+                name="search"
+                icon={FiSearch}
+                placeholder="Buscar um catalogo"
+              />
+            </div>
+          </Form>
         </section>
         <section>
           <h2 className="sr-only">Catalogos</h2>
