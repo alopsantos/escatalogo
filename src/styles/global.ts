@@ -1,4 +1,8 @@
+import { createGlobalStyle } from "styled-components";
+
+export default createGlobalStyle`
 * {
+  outline: 0;
   margin: 0;
   padding: 0;
   -webkit-font-smoothing: antialiased;
@@ -19,3 +23,7 @@ html{
 body{
   font-family: 'Poppins', sans-serif;
 }
+input, button{
+  font-size: 1.0rem;
+}
+`;
