@@ -1,13 +1,13 @@
 import React from "react";
 
-import { ModalOverlay, Form } from "./styles";
+import { ModalOverlay, Container } from "./styles";
 const CadastroCatalogoModal = ({ onClose = () => {} }) => {
   return (
     <ModalOverlay>
       <div className="modal">
         <div className="form">
           <h2>Novo Catálogo</h2>
-          <Form>
+          <Container>
             <div className="input-group">
               <label className="sr-only">Nome da coleção:</label>
               <input
@@ -59,7 +59,7 @@ const CadastroCatalogoModal = ({ onClose = () => {} }) => {
               <button onClick={onClose} className="cancelar">Cancelar</button>
               <button>Salvar</button>
             </div>
-          </Form>
+          </Container>
         </div>
       </div>
     </ModalOverlay>

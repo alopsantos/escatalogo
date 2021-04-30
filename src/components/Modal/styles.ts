@@ -14,25 +14,20 @@ export const ModalOverlay = styled.div`
     background: #f0f2f5;
     padding: 2.4rem;
     width: 90%;
-    max-width: 500px;
+    max-width: 560px;
     z-index: 1;
     position: relative;
   }
   div.form {
-    max-width: 500px;
+    max-width: 560px;
     h2 {
       margin-top: 0;
     }
   }
 `;
 
-export const Form = styled.form`
-  input {
-    border: none;
-    border-radius: 0.2rem;
-    padding: 0.8rem;
-    width: 100%;
-  }
+export const Container = styled.div`
+
   div.input-group {
     margin-top: 0.8rem;
   }
@@ -40,7 +35,7 @@ export const Form = styled.form`
   div.grupos{
     display: flex;
       flex-direction: row;
-      gap: 10px;
+      gap: 12px;
   }
   div.input-group small {
     opacity: 0.4;

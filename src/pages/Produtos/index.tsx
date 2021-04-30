@@ -53,20 +53,22 @@ const Produtos: React.FC = () => {
         </section>
         <section>
           <Form onSubmit={() => {}}>
-            <Input
-              type="text"
-              name="email"
-              icon={FiSearch}
-              placeholder="Buscar um produto"
-            />
-
-            <Button type="submit">Buscar</Button>
+            <div>
+              <Input
+                type="text"
+                name="email"
+                icon={FiSearch}
+                placeholder="Buscar um produto"
+              />
+            </div>
+            <div>
+              <Button type="submit">Buscar</Button>
+            </div>
           </Form>
         </section>
         <section>
           <h2 className="sr-only">Catalogos</h2>
 
-          <Link to="/">+ Novo Produto</Link>
           <table>
             <thead>
               <tr>

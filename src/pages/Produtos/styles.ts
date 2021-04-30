@@ -30,21 +30,13 @@ export const Container = styled.section`
       }
     }
 
-    input {
-      width: 80%;
-      border: none;
-      border-radius: 5px;
-      padding: 5px 5px 5px 10px;
-      height: 30px;
-    }
-    button {
-      width: 140px;
-      height: 40px;
-      padding: 5px;
-      border: none;
-      border-radius: 5px;
-      margin-left: 5px;
-      cursor: pointer;
+    form{
+      display: grid;
+      grid-row: 1fr;
+
+      div{
+        width: 50%;
+      }
     }
   }
 
