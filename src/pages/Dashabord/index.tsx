@@ -7,6 +7,7 @@ import {
   Clipboard,
   Award,
   FilePlus,
+  Trash2
 } from "react-feather";
 
 import api from "../../services/api";
@@ -58,12 +59,10 @@ const Dashboard: React.FC = () => {
                     onClick={() => setIsModalVisible(true)}
                   />
                 </th>
-                <th>Codigo</th>
                 <th>Nome</th>
                 <th>Descrição</th>
                 <th>Produtos</th>
-                <th></th>
-                <th></th>
+                <th>Gerenciar</th>
               </tr>
             </thead>
 
@@ -71,16 +70,20 @@ const Dashboard: React.FC = () => {
               {catalogo.map((catalogo) => {
                 return (
                   <tr key={catalogo.id}>
-                    <td></td>
                     <td>{catalogo.id}</td>
                     <td>{catalogo.nome}</td>
                     <td>{catalogo.descricao.substr(0, 40)}...</td>
-                    <td>{catalogo.itens.length}</td>
+                    <td width="50">{catalogo.itens.length}</td>
                     <td>
-                      <Edit size="22" color="blue" />
-                    </td>
-                    <td>
-                      <MinusCircle size="22" color="red" />
+                      <Link to="#">
+                        <Package size="28" color="#969cb3" />
+                      </Link>
+                      <Link to="#">
+                        <Edit size="28" color="#969cb3" />
+                      </Link>
+                      <Link to="#">
+                        <Trash2 size="28" color="#969cb3" />
+                      </Link>
                     </td>
                   </tr>
                 );

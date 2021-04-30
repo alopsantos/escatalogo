@@ -16,14 +16,20 @@ import { Containerheader, Container, Footer } from "./styles";
 import Cardstatus from "../../components/CardStatus";
 import CadastroProdutoModal from "../../components/Modal/CadastroProdutoModal";
 
-interface ICatalogo {
+interface IBrand {
   id: number;
+  instagram: string;
+  loja: ILoja[];
+}
+interface ILoja {
   nome: string;
-  descricao: string;
-  itens: string[];
+  endereco:string;
+  cep: string;
+  telefone: string;
+  whatsapp: string;
 }
 const Produtos: React.FC = () => {
-  const [catalogo, setCatalogo] = useState<ICatalogo[]>([]);
+  const [brand, setBrand] = useState<IBrand[]>([]);
   const [isModalVisible, setIsModalVisible] = useState(false);
 
   useEffect(() => {
@@ -31,8 +37,8 @@ const Produtos: React.FC = () => {
   }, []);
 
   async function carregarCatalogo() {
-    const resulte = await api.get("catalogo");
-    setCatalogo(resulte.data);
+    const resulte = await api.get("brand");
+    setBrand(resulte.data);
   }
 
   return (
@@ -52,13 +58,11 @@ const Produtos: React.FC = () => {
         </section>
         <section>
           <h2 className="sr-only">Catalogos</h2>
-
-          <Link to="/">+ Novo Produto</Link>
           <table>
             <thead>
               <tr>
                 <th>
-                  <Link to="#" title="Adicionar novo produto" onClick={() => setIsModalVisible(true)}>
+                  <Link to="#" title="Adicionar novo endereço" onClick={() => setIsModalVisible(true)}>
                     <FilePlus
                       size="22"
                       color="green"
@@ -66,22 +70,18 @@ const Produtos: React.FC = () => {
                   </Link>
                 </th>
                 <th>Nome</th>
-                <th>Valor</th>
-                <th>Grade</th>
-                <th>Referencia</th>
+                <th>Endereços</th>
                 <th>Gerenciar</th>
               </tr>
             </thead>
 
             <tbody>
-              {catalogo.map((catalogo) => {
+              {brand.map((marca) => {
                 return (
                   <tr>
-                    <td key={catalogo.id}>{catalogo.id}</td>
-                    <td>Blusa Marisa Vermelho Poa</td>
-                    <td>{catalogo.itens.length}</td>
-                    <td>P/M/G</td>
-                    <td>12494</td>
+                    <td key={marca.id}>{marca.id}</td>
+                    <td>{marca.instagram}</td>
+                    <td>{marca.loja.length}</td>
                     <td>
                       <Link to="#" title="Editar cadastro do produto">
                         <Edit size="28" color="#969cb3" />

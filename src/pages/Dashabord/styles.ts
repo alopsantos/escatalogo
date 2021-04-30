@@ -46,7 +46,6 @@ export const Container = styled.section`
   }
 
   h2 {
-    font-family: "Poppins", sans-serif;
     font-size: 1.2rem;
     color: #ef1c8f;
 
@@ -65,7 +64,6 @@ export const Container = styled.section`
   a {
     color: #49aa26;
     text-decoration: none;
-    font-family: "Poppins", sans-serif;
     cursor: pointer;
     &:hover {
       color: #3dd705;
@@ -75,13 +73,12 @@ export const Container = styled.section`
     width: 100%;
     border-spacing: 0 0.5rem;
     color: #969cb3;
-    font-family: "Poppins", sans-serif;
     font-size: 1rem;
 
     svg {
       cursor: pointer;
     }
-    
+
     thead tr th:first-child,
     tbody tr td:first-child {
       border-radius: 0.25rem 0 0 0.25rem;
@@ -107,8 +104,17 @@ export const Container = styled.section`
       background: #fff;
       padding: 1rem 2rem;
 
-      svg {
-        cursor: pointer;
+      a {
+        display: inherit;
+        padding-left: 10px;
+
+        svg {
+          cursor: pointer;
+
+          &:hover {
+            fill: #ccc;
+          }
+        }
       }
     }
   }
@@ -120,6 +126,5 @@ export const Footer = styled.footer`
   color: var(--dark-blue);
   opacity: 0.6;
   bottom: 0;
-  font-family: "Poppins", sans-serif;
   font-size: 0.6rem;
 `;
