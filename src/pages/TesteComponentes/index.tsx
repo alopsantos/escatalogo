@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { FiMail } from "react-icons/fi";
+import { FiMail, FiSearch } from "react-icons/fi";
 import Input from "../../components/Input";
 import { FormHandles } from "@unform/core";
 import { Form } from "@unform/web";
@@ -14,7 +14,7 @@ const Testecomponentes: React.FC = () => {
       <Form ref={formRef} onSubmit={() => {}}>
         <Input name="email" icon={FiMail} placeholder="Email" />
         <Input name="email" icon={FiMail} placeholder="Email" />
-        <Input name="email" icon={FiMail} placeholder="Email" />
+        <Input type="email" name="email" icon={FiSearch} placeholder="Email" />
 
         <Button type="submit">Cadastrar</Button>
       </Form>

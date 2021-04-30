@@ -12,7 +12,7 @@ export const Container = styled.div<IContainerProps>`
   border-radius: 10px;
   padding: 10px;
   width: 100%;
-  border: 2px solid #232129;
+  border: 1px solid #232129;
   color: #666360;
   display: flex;
   align-items: center;

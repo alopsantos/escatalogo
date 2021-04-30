@@ -8,6 +8,9 @@ import {
   FilePlus,
   Trash2,
 } from "react-feather";
+import { Form } from "@unform/web";
+import { FiSearch } from "react-icons/fi";
+
 import { Link } from "react-router-dom";
 
 import api from "../../services/api";
@@ -15,6 +18,8 @@ import Logo from "../../assets/images/logo.svg";
 import { Containerheader, Container, Footer } from "./styles";
 import Cardstatus from "../../components/CardStatus";
 import CadastroProdutoModal from "../../components/Modal/CadastroProdutoModal";
+import Input from "../../components/Input";
+import Button from "../../components/Button";
 
 interface ICatalogo {
   id: number;
@@ -47,8 +52,16 @@ const Produtos: React.FC = () => {
           <Cardstatus pagina="marca" titulo="Marca" icon={Award} />
         </section>
         <section>
-          <input type="text" />
-          <button>Buscar</button>
+          <Form onSubmit={() => {}}>
+            <Input
+              type="text"
+              name="email"
+              icon={FiSearch}
+              placeholder="Buscar um produto"
+            />
+
+            <Button type="submit">Buscar</Button>
+          </Form>
         </section>
         <section>
           <h2 className="sr-only">Catalogos</h2>
@@ -58,11 +71,12 @@ const Produtos: React.FC = () => {
             <thead>
               <tr>
                 <th>
-                  <Link to="#" title="Adicionar novo produto" onClick={() => setIsModalVisible(true)}>
-                    <FilePlus
-                      size="22"
-                      color="green"
-                    />
+                  <Link
+                    to="#"
+                    title="Adicionar novo produto"
+                    onClick={() => setIsModalVisible(true)}
+                  >
+                    <FilePlus size="22" color="green" />
                   </Link>
                 </th>
                 <th>Nome</th>
