@@ -1,11 +1,7 @@
 import React from "react";
 import { Form } from "@unform/web";
 import {
-  FiPackage,
   FiFileText,
-  FiTag,
-  FiCrop,
-  FiDollarSign,
   FiClipboard,
   FiAperture,
   FiImage,

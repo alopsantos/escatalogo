@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import {
-  MinusCircle,
   Edit,
   Package,
   Clipboard,
@@ -17,7 +16,7 @@ import Cardstatus from "../../components/CardStatus";
 import CadastroCatalogoModal from "../../components/Modal/CadastroCatalogoModal";
 import { Form } from "@unform/web";
 import Input from "../../components/Input";
-import { FiSearch } from "react-icons/fi";
+import { FiPrinter, FiSearch } from "react-icons/fi";
 
 interface ICatalogo {
   id: number;
@@ -90,13 +89,16 @@ const Dashboard: React.FC = () => {
                     <td>{catalogo.descricao.substr(0, 40)}...</td>
                     <td width="50">{catalogo.itens.length}</td>
                     <td>
-                      <Link to="#">
+                      <Link to={"/catalogo/"+ catalogo.id} title="Imprimir catálogo.">
+                        <FiPrinter size="28" color="#969cb3" />
+                      </Link>
+                      <Link to="#" title="Editar produtos do catálogo">
                         <Package size="28" color="#969cb3" />
                       </Link>
-                      <Link to="#">
+                      <Link to="#" title="Editar catálogo.">
                         <Edit size="28" color="#969cb3" />
                       </Link>
-                      <Link to="#">
+                      <Link to="#" title="Excluir catálogo">
                         <Trash2 size="28" color="#969cb3" />
                       </Link>
                     </td>

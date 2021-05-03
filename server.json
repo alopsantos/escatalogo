@@ -236,6 +236,7 @@
       "descricao": "traz o entusiasmo da estação, com peças que possuem um equilibrio entre si, dando a oportunidade de composições aconchegantes e cheias de estilo.",
       "capa": "https://github.com/alopsantos/ES-Catalog/blob/master/images/capa.jpg?raw=true",
       "contracapa": "https://github.com/alopsantos/ES-Catalog/blob/master/images/contra-capa.jpg?raw=true",
+      "cor": "orange",
       "itens": [
         {
           "posicao": 1,

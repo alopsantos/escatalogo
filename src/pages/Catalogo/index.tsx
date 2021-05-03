@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import { FaWhatsapp, FaInstagram } from "react-icons/fa";
 
 import Capa from "../../components/Capa";
@@ -57,18 +58,19 @@ interface ILoja {
   telefone: string;
   whatsapp: string;
 }
-
+type TParams = { id: string };
 const Catalogo: React.FC = () => {
+  let { id } = useParams<TParams>();
   const [catalogo, setCatalogo] = useState<ICatalogo>();
   const [brand, setBrand] = useState<IBrand>();
 
   useEffect(() => {
-    carregarCatalogo();
+    carregarCatalogo(id);
     carregarBrand();
-  }, []);
+  }, [id]);
 
-  async function carregarCatalogo() {
-    const resulte = await api.get("catalogo/1");
+  async function carregarCatalogo(catalogoId: string) {
+    const resulte = await api.get(`catalogo/${catalogoId}`);
     setCatalogo(resulte.data);
   }
 
@@ -164,10 +166,14 @@ const Catalogo: React.FC = () => {
           <span>
             {brand?.loja[0].nome}
             <br />
-            {brand?.loja[0].endereco}<br />
-            Cep: {brand?.loja[0].cep}<br />
-            {brand?.loja[0].telefone ? brand?.loja[0].telefone : ""}<br />
-            {brand?.loja[0].whatsapp}<br />
+            {brand?.loja[0].endereco}
+            <br />
+            Cep: {brand?.loja[0].cep}
+            <br />
+            {brand?.loja[0].telefone ? brand?.loja[0].telefone : ""}
+            <br />
+            {brand?.loja[0].whatsapp}
+            <br />
           </span>
         </p>
         <p>
@@ -175,15 +181,19 @@ const Catalogo: React.FC = () => {
           <span>
             {brand?.loja[1].nome}
             <br />
-            {brand?.loja[1].endereco}<br />
-            Cep: {brand?.loja[1].cep}<br />
-            {brand?.loja[1].telefone ? brand?.loja[1].telefone : ""}<br />
-            {brand?.loja[1].whatsapp}<br />
+            {brand?.loja[1].endereco}
+            <br />
+            Cep: {brand?.loja[1].cep}
+            <br />
+            {brand?.loja[1].telefone ? brand?.loja[1].telefone : ""}
+            <br />
+            {brand?.loja[1].whatsapp}
+            <br />
           </span>
         </p>
       </CardBrand>
     </>
   );
-}
+};
 
 export default Catalogo;
